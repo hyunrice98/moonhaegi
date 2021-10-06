@@ -7,27 +7,27 @@
 
 using namespace std;
 
-int n;
+int t, n;
 int x[5001];
+
+void print(int size) {
+    for (int i = 0; i < size; i++) {
+        cout << x[i] << " ";
+    }
+    cout << '\n';
+}
 
 void checkIdentical() {
     for (int i = 1; i < n; i++) {
         for (int j = i; j < n; j++) {
             if (x[j] != x[j % i]) break;
             if (j == n - 1) {
-                for (int k = 0; k < i; k++) {
-                    cout << x[k] << " ";
-                }
-                cout << '\n';
+                print(i);
                 return;
             }
         }
     }
-
-    for (int i = 0; i < n; i++) {
-        cout << x[i] << " ";
-    }
-    cout << '\n';
+    print(n);
 }
 
 int main() {
@@ -35,7 +35,6 @@ int main() {
     cin.tie(nullptr);
     cout.tie(nullptr);
 
-    int t;
     cin >> t;
     while (t--) {
         cin >> n;
