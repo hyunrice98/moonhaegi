@@ -24,6 +24,7 @@ int main() {
         string sentence[2001];
         queue<string> word[21];
 
+        // 입력
         for (int i = 0; i < m; i++) {
             cin >> sentence[i];
         }
@@ -34,6 +35,8 @@ int main() {
                 word[i].push(s);
             }
         }
+
+        // 해결
         for (int i = 0; i < m; i++) {
             answer = 0;
             for (int j = 0; j < n; j++) {

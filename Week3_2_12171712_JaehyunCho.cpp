@@ -71,3 +71,66 @@ int main() {
 
     return 0;
 }
+
+// WAY_2: dfs double times
+//#include <iostream>
+//#include <vector>
+//#include <utility>
+//
+//using namespace std;
+//
+//#define P pair<int, int>
+//
+//int t, n, u, v, d;
+//vector<vector<P>> tree;
+//bool visited[2001];
+//int dist[2001];
+//
+//void dfs(int x) {
+//    visited[x] = true;
+//    for (P p: tree[x]) {
+//        if (!visited[p.first]) {
+//            dist[p.first] = dist[x] + p.second;
+//            dfs(p.first);
+//        }
+//    }
+//}
+//
+//int main() {
+//    ios::sync_with_stdio(false);
+//    cin.tie(nullptr);
+//    cout.tie(nullptr);
+//
+//    cin >> t;
+//    while (t--) {
+//        cin >> n;
+//        memset(visited, false, 2001);
+//        memset(dist, 0, 2001);
+//        tree.clear();
+//        tree.resize(n + 1);
+//        for (int i = 0; i < n - 1; i++) {
+//            cin >> u >> v >> d;
+//            tree[u].push_back(make_pair(v, d));
+//            tree[v].push_back(make_pair(u, d));
+//        }
+//
+//        dfs(1);
+//        int big = -1, bigIdx = 1;
+//        for (int i = 1; i <= n; i++) {
+//            if (dist[i] > big) {
+//                big = dist[i];
+//                bigIdx = i;
+//            }
+//        }
+//
+//        memset(visited, false, 2001);
+//        memset(dist, 0, 2001);
+//
+//        dfs(bigIdx);
+//
+//        sort(dist + 1, dist + n + 1);
+//        cout << dist[n] << '\n';
+//    }
+//
+//    return 0;
+//}
