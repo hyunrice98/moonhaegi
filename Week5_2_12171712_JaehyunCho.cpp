@@ -10,6 +10,7 @@ using namespace std;
 int n, m, answer;
 int houseArr[1000001];
 
+// Checking if there is enough house held if length.
 bool check(int length) {
     int house = 1;
     int count = 0;
@@ -25,9 +26,17 @@ bool check(int length) {
     return false;
 }
 
+// Getting solution via binary search
+// Binary search usage: getting good length for answer.
+// Returned length should be one -> binary searching for single most big length
 int solution(int left, int right) {
     int mid;
+    // Returned if length (found number) is single.
+    // Finding Single num? -> if left and right is equal or close
     if (left == right) return left;
+    // If left and right is one diff,
+    // !check(right) -> house is not enough -> return left
+    // check(right) -> enough house even if length is bit -> return right
     if (left + 1 == right) {
         if (check(right) == true)
             return right;

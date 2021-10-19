@@ -20,19 +20,15 @@ void clearStacks() {
 
 void putBlock(int x) {
     s.push(x);
-
     if (minS.empty() || x <= minS.top()) minS.push(x);
     if (maxS.empty() || x >= maxS.top()) maxS.push(x);
-
     cout << minS.top() << ' ' << maxS.top() << '\n';
 }
 
 void deleteBlock() {
     if (s.empty()) return;
-
     if (minS.top() == s.top()) minS.pop();
     if (maxS.top() == s.top()) maxS.pop();
-
     s.pop();
 }
 
