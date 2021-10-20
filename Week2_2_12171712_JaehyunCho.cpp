@@ -6,27 +6,36 @@
 #include <iostream>
 #include <utility>
 #include <algorithm>
+#include <cstring>
 
 using namespace std;
 
 int t, n, answer, flag;
-int resourceA[10001];
-int resourceB[10001];
+int resourceA[10001], resourceB[10001];
 pair<int, int> resourceSum[10001];
+
+void reset() {
+    memset(resourceA, 0, sizeof(resourceA));
+    memset(resourceB, 0, sizeof(resourceB));
+    for (auto &i: resourceSum) {
+        i = {0, 0};
+    }
+}
 
 int main() {
     ios::sync_with_stdio(false);
-    cin.tie(nullptr);
     cout.tie(nullptr);
+    cin.tie(nullptr);
 
     cin >> t;
     while (t--) {
+        reset();
         cin >> n;
         for (int i = 0; i < n; i++) {
             cin >> resourceA[i] >> resourceB[i];
-            resourceSum[i] = make_pair(resourceA[i] + resourceB[i], i);
+            resourceSum[i] = {resourceA[i] + resourceB[i], i};
         }
-        sort(resourceSum, resourceSum + n);
+        sort(resourceSum, resourceSum + n, greater<>());
         answer = 0;
         flag = 1;
 

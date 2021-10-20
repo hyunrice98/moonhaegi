@@ -1,5 +1,5 @@
 //
-// W5_1: Signal_Interpretation
+// W6_2: Escape
 // Created by 조재현 on 2021/10/08.
 //
 
@@ -19,6 +19,7 @@ bool visited[1001][1001];
 
 int dx[8] = {0, 0, 1, 1, 1, -1, -1, -1};
 int dy[8] = {1, -1, 0, -1, 1, 0, -1, 1};
+// 주인공위치, 안전지역, 검사, 소총수
 Point inha, safe, knight, gunner;
 int t, n;
 
@@ -56,6 +57,7 @@ int main() {
                 continue;
             check[knight.x + dx[i]][knight.y + dy[i]] = -1;
         }
+
         // queue for dfs
         queue<Point> q;
         // start from inha's place

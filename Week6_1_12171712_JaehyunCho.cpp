@@ -1,5 +1,5 @@
 //
-// W5_1: Signal_Interpretation
+// W6_1: Checkout_Timer
 // Created by 조재현 on 2021/10/08.
 //
 
@@ -31,8 +31,10 @@ struct compare {
 customerInfo customer[100001];
 priority_queue<counterInfo, vector<counterInfo>, compare> counterPQ;
 
-int costAnswer[20001];
+// timeAnswer: time all customer finishes buying
 int n, m, timeAnswer;
+// costAnswer: total money each counter earned
+int costAnswer[20001];
 
 int main() {
     ios::sync_with_stdio(false);
@@ -41,9 +43,13 @@ int main() {
 
     cin >> n >> m;
     for (int i = 0; i < m; i++) {
+        // useTime: time using counter
+        // cost: money used by customer
         cin >> customer[i].useTime >> customer[i].cost;
     }
 
+    // Assigning customers with size of counter size
+    // assigning counters in counterPQ
     for (int i = 0; i < n; i++) {
         counterPQ.push({customer[i].useTime, i});
         costAnswer[i] += customer[i].cost;
