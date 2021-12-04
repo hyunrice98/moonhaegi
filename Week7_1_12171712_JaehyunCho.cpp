@@ -1,5 +1,5 @@
 //
-// W7_1:
+// W7_1: Scales
 // Created by 조재현 on 2021/10/15.
 //
 
@@ -44,7 +44,7 @@ int main() {
         cout << '\n';
 
         for (auto & i : arr) {
-            memset(i, 0, sizeof(int) * 101);
+            memset(i, 0, sizeof(i));
         }
     }
 

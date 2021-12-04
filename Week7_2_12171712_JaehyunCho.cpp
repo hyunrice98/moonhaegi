@@ -1,41 +1,31 @@
 //
-// W7_2:
+// W7_2: Hamburger_Store
 // Created by 조재현 on 2021/10/15.
 //
 
 #include <iostream>
 #include <queue>
+#include <cmath>
+#include <vector>
 
 using namespace std;
 
-struct ham {
+int t, m, n, k, x, y;
+
+struct Point {
     int x;
     int y;
-    int dist;
+    double dist;
 
-    ham() {}
-
-    ham(int x, int y) {
+    Point(int x, int y, double dist) {
         this->x = x;
         this->y = y;
-        this->dist = x * x + y * y;
+        this->dist = dist;
     }
 };
 
 struct comp {
-    bool operator()(ham a, ham b) {
-        if (a.dist == b.dist) {
-            if (a.x == b.x) {
-                return a.y > b.y;
-            }
-            return a.x > b.x;
-        }
-        return a.dist > b.dist;
-    }
-};
-
-struct comp2 {
-    bool operator()(ham a, ham b) {
+    bool operator()(Point a, Point b) {
         if (a.dist == b.dist) {
             if (a.x == b.x) {
                 return a.y < b.y;
@@ -46,8 +36,6 @@ struct comp2 {
     }
 };
 
-int t, m, n, k;
-
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -55,38 +43,21 @@ int main() {
 
     cin >> t;
     while (t--) {
-        priority_queue<ham, vector<ham>, comp2> s_pq;
-        priority_queue<ham, vector<ham>, comp> l_pq;
-        queue<ham> q;
-
         cin >> m >> n >> k;
-        int x, y;
+        priority_queue<Point, vector<Point>, comp> stores;
+
         for (int i = 0; i < m; i++) {
             cin >> x >> y;
-            s_pq.push(ham(x, y));
+            stores.push(Point(x, y, sqrt(x * x + y * y)));
+            if (stores.size() > k)
+                stores.pop();
         }
+
         for (int i = 0; i < n; i++) {
             cin >> x >> y;
-            q.push(ham(x, y));
-        }
-
-        for (int i = k; i <= m; i++) {
-            ham temp = s_pq.top();
-            s_pq.pop();
-            l_pq.push(temp);
-        }
-
-        for (int i = 0; i < n; i++) {
-            ham h = q.front();
-            q.pop();
-            s_pq.push(h);
-            ham temp = s_pq.top();
-            s_pq.pop();
-            l_pq.push(temp);
-            ham top = l_pq.top();
-            cout << top.x << ' ' << top.y << '\n';
+            stores.push(Point(x, y, sqrt(x * x + y * y)));
+            stores.pop();
+            cout << stores.top().x << ' ' << stores.top().y << '\n';
         }
     }
-
-    return 0;
 }

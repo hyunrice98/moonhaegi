@@ -75,6 +75,19 @@ int main() {
         text += "$";
     }
 
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n - i; j++) {
+            text += puzzle[j][i + j];
+        }
+        text += "$";
+    }
+    for (int i = 1; i < n; i++) {
+        for (int j = 0; j < n - i; j++) {
+            text += puzzle[i + j][j];
+        }
+        text += "$";
+    }
+
     while (m--) {
         cin >> word;
         failureFunction(word);

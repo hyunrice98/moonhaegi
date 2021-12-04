@@ -6,9 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/jaehyun/CLionProjects/untitled1/Week13_1_12171712_JaehyunCho.cpp
+/Users/jaehyun/CLionProjects/untitled1/Week7_2_12171712_JaehyunCho.cpp
 iostream
 -
-string
+queue
+-
+cmath
+-
+vector
 -
 
