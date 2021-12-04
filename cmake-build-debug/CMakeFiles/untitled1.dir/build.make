@@ -66,27 +66,27 @@ include CMakeFiles/untitled1.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/untitled1.dir/flags.make
 
-CMakeFiles/untitled1.dir/Week7_2_12171712_JaehyunCho.cpp.o: CMakeFiles/untitled1.dir/flags.make
-CMakeFiles/untitled1.dir/Week7_2_12171712_JaehyunCho.cpp.o: ../Week7_2_12171712_JaehyunCho.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jaehyun/CLionProjects/untitled1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled1.dir/Week7_2_12171712_JaehyunCho.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/Week7_2_12171712_JaehyunCho.cpp.o -c /Users/jaehyun/CLionProjects/untitled1/Week7_2_12171712_JaehyunCho.cpp
+CMakeFiles/untitled1.dir/Week7_1_12171712_JaehyunCho.cpp.o: CMakeFiles/untitled1.dir/flags.make
+CMakeFiles/untitled1.dir/Week7_1_12171712_JaehyunCho.cpp.o: ../Week7_1_12171712_JaehyunCho.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jaehyun/CLionProjects/untitled1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled1.dir/Week7_1_12171712_JaehyunCho.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/Week7_1_12171712_JaehyunCho.cpp.o -c /Users/jaehyun/CLionProjects/untitled1/Week7_1_12171712_JaehyunCho.cpp
 
-CMakeFiles/untitled1.dir/Week7_2_12171712_JaehyunCho.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled1.dir/Week7_2_12171712_JaehyunCho.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jaehyun/CLionProjects/untitled1/Week7_2_12171712_JaehyunCho.cpp > CMakeFiles/untitled1.dir/Week7_2_12171712_JaehyunCho.cpp.i
+CMakeFiles/untitled1.dir/Week7_1_12171712_JaehyunCho.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled1.dir/Week7_1_12171712_JaehyunCho.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jaehyun/CLionProjects/untitled1/Week7_1_12171712_JaehyunCho.cpp > CMakeFiles/untitled1.dir/Week7_1_12171712_JaehyunCho.cpp.i
 
-CMakeFiles/untitled1.dir/Week7_2_12171712_JaehyunCho.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled1.dir/Week7_2_12171712_JaehyunCho.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jaehyun/CLionProjects/untitled1/Week7_2_12171712_JaehyunCho.cpp -o CMakeFiles/untitled1.dir/Week7_2_12171712_JaehyunCho.cpp.s
+CMakeFiles/untitled1.dir/Week7_1_12171712_JaehyunCho.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled1.dir/Week7_1_12171712_JaehyunCho.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jaehyun/CLionProjects/untitled1/Week7_1_12171712_JaehyunCho.cpp -o CMakeFiles/untitled1.dir/Week7_1_12171712_JaehyunCho.cpp.s
 
 # Object files for target untitled1
 untitled1_OBJECTS = \
-"CMakeFiles/untitled1.dir/Week7_2_12171712_JaehyunCho.cpp.o"
+"CMakeFiles/untitled1.dir/Week7_1_12171712_JaehyunCho.cpp.o"
 
 # External object files for target untitled1
 untitled1_EXTERNAL_OBJECTS =
 
-untitled1: CMakeFiles/untitled1.dir/Week7_2_12171712_JaehyunCho.cpp.o
+untitled1: CMakeFiles/untitled1.dir/Week7_1_12171712_JaehyunCho.cpp.o
 untitled1: CMakeFiles/untitled1.dir/build.make
 untitled1: CMakeFiles/untitled1.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jaehyun/CLionProjects/untitled1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable untitled1"

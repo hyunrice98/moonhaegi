@@ -24,9 +24,9 @@ add_executable(
 #        Week6_1_12171712_JaehyunCho.cpp
 #        Week6_2_12171712_JaehyunCho.cpp
 
-#        Week7_1_12171712_JaehyunCho.cpp
+        Week7_1_12171712_JaehyunCho.cpp
 #        Week7_2_12171712_JaehyunCho.cpp
-        Week9_1_12171712_JaehyunCho.cpp
+#        Week9_1_12171712_JaehyunCho.cpp
 #        Week9_2_12171712_JaehyunCho.cpp
 #        Week10_1_12171712_JaehyunCho.cpp
 #        Week10_2_12171712_JaehyunCho.cpp

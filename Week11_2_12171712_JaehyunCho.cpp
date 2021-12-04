@@ -8,42 +8,52 @@
 
 using namespace std;
 
+char paper[1025][1025];
 int t, n;
-int grid[1024][1024];
-char input;
-int rNum, rSize, bNum, bSize;
+
+struct paperInfo {
+    int redNumber;
+    int redSize;
+    int blueNumber;
+    int blueSize;
+
+    paperInfo() {
+        redNumber = redSize = blueNumber = blueSize = 0;
+    }
+};
 
 void clear() {
-    for (auto &i: grid) {
-        memset(i, 0, sizeof(i));
+    for (int i = 0; i < 1025; i++) {
+        memset(paper[i], '\0', sizeof(paper[i]));
     }
-    n = 0;
-    rNum = 0;
-    rSize = 0;
-    bNum = 0;
-    bSize = 0;
 }
 
-void solve(int a, int b, int c, int d) {
-    int state = grid[a][c];
-    for (int i = a; i < b; i++) {
-        for (int j = c; j < d; j++) {
-            if (grid[i][j] != state) {
-                solve(a, (a + b) / 2, c, (c + d) / 2);
-                solve((a + b) / 2, b, c, (c + d) / 2);
-                solve(a, (a + b) / 2, (c + d) / 2, d);
-                solve((a + b) / 2, b, (c + d) / 2, d);
-                return;
-            }
-        }
+paperInfo solution(int x, int y, int size) {
+    paperInfo result;
+    if (size == 1) {
+        if (paper[x][y] == 'R') result.redNumber = result.redSize = 1;
+        else result.blueNumber = result.blueSize = 1;
+        return result;
     }
-    if (state == 1) {
-        ++rNum;
-        rSize += (b - a) * (b - a);
-    } else {
-        ++bNum;
-        bSize += (b - a) * (b - a);
+
+    paperInfo status[4];
+    status[0] = solution(x, y, size / 2);
+    status[1] = solution(x + size / 2, y, size / 2);
+    status[2] = solution(x, y + size / 2, size / 2);
+    status[3] = solution(x + size / 2, y + size / 2, size / 2);
+
+    for (paperInfo s: status) {
+        result.redNumber += s.redNumber;
+        result.redSize += s.redSize;
+        result.blueNumber += s.blueNumber;
+        result.blueSize += s.blueSize;
     }
+
+    if (result.redNumber == 0)
+        result.blueNumber = 1;
+    if (result.blueNumber == 0)
+        result.redNumber = 1;
+    return result;
 }
 
 int main() {
@@ -56,16 +66,11 @@ int main() {
         cin >> n;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                cin >> input;
-                if (input == 'R') {
-                    grid[i][j] = 1;
-                } else {
-                    grid[i][j] = 0;
-                }
+                cin >> paper[i][j];
             }
         }
-        solve(0, n, 0, n);
-        cout << rNum << ' ' << rSize << ' ' << bNum << ' ' << bSize << '\n';
+        paperInfo answer = solution(0, 0, n);
+        cout << answer.redNumber << ' ' << answer.redSize << ' ' << answer.blueNumber << ' ' << answer.blueSize << '\n';
         clear();
     }
 

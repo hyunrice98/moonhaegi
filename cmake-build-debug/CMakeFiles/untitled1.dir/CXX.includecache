@@ -6,12 +6,10 @@
 
 #IncludeRegexTransform: 
 
-/Users/jaehyun/CLionProjects/untitled1/Week7_2_12171712_JaehyunCho.cpp
+/Users/jaehyun/CLionProjects/untitled1/Week10_1_12171712_JaehyunCho.cpp
 iostream
 -
 queue
--
-cmath
 -
 vector
 -

@@ -22,8 +22,10 @@ pll geoSeries(ll x, ll n) {
     // X^1+X^2+...+X^(N/2) mod M
     ll sum = half.second;
 
-    if (n % 2 == 0) return {(exp * exp) % M, ((1 + exp) * sum) % M};
-    else return {(x * exp * exp) % M, (x + x * (1 + exp) * sum) % M};
+    if (n % 2 == 0)
+        return {(exp * exp) % M, ((1 + exp) * sum) % M};
+    else
+        return {(x * exp * exp) % M, (x + x * (1 + exp) * sum) % M};
 }
 
 int main() {
