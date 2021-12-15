@@ -28,16 +28,16 @@ int main() {
             cin >> arr[i];
         }
 
-        result[0] = 1;
-        for (int i = 1; i < n; i++) {
+        int answer = 0;
+        for (int i = 0; i < n; i++) {
             result[i] = 1;
             for (int j = 0; j < i; j++) {
                 if (arr[i] > arr[j]) result[i] = max(result[i], result[j] + 1);
+                answer = max(answer, result[i]);
             }
         }
 
-        sort(result, result + n);
-        cout << result[n - 1] << '\n';
+        cout << answer << '\n';
     }
 
     return 0;
